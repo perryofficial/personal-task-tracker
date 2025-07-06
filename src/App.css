@@ -1,38 +1,250 @@
-.App {
-  text-align: center;
+/* General App Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body.dark {
+  background-color: #1e1e1e;
+  color: #ddd;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Dark Mode Toggle */
+.darkmode-toggle {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.darkmode-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.darkmode-toggle button:hover {
+  transform: rotate(20deg);
+}
+
+/* Task Dashboard */
+.task-dashboard {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .task-dashboard {
+  background: #2c2c2c;
+}
+
+/* Task Form */
+.task-form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.task-form button {
+  background-color: #3498db;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-form button:hover {
+  background-color: #2980b9;
+}
+
+/* Task Filter */
+.task-filter {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.task-filter button {
+  border: none;
+  background: #ddd;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.task-filter button.active {
+  background: #3498db;
+  color: #fff;
+}
+
+.task-filter button:hover {
+  background: #bbb;
+}
+
+body.dark .task-filter button {
+  background: #444;
+}
+
+body.dark .task-filter button.active {
+  background: #2980b9;
+}
+
+/* Search Bar */
+.search-bar {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+body.dark .search-bar {
+  background: #3c3c3c;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+/* Task List & Items */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  transition: background 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+body.dark .task-item {
+  background: #3c3c3c;
+  border-color: #555;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.task-item.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.75rem;
+  margin-left: 10px;
+}
+
+.task-actions button {
+  background: #e67e22;
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: background 0.3s ease;
+}
+
+.task-actions .delete-btn {
+  background-color: #e74c3c;
+}
+
+.task-actions button:hover {
+  filter: brightness(90%);
+}
+
+/* Due Date Styling */
+.due-date {
+  display: block;
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+.due-date.overdue {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .task-filter {
+    flex-direction: column;
+    gap: 5px;
   }
 }

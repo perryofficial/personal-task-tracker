@@ -26,6 +26,13 @@ npm install
 npm start
 Open http://localhost:3000 
 
+
+A responsive task management app built with React.js. Features include task creation, editing, filtering, dark mode toggle, and per-user data persistence.
+
+## 🔗 Live Demo
+👉 [https://personal-task-tracker-iota.vercel.app/](https://personal-task-tracker-iota.vercel.app/)
+
+
 ![image](https://github.com/user-attachments/assets/941553ae-caee-4b35-a0aa-01f965244d16)
 ![image](https://github.com/user-attachments/assets/93b2ec0a-f2cf-448d-b478-0bcbd0c6fa04)
 ![image](https://github.com/user-attachments/assets/41a94781-5067-48e0-9f44-0e55cc950478)

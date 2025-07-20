@@ -2,7 +2,7 @@
 
 A simple and elegant task management app built with React.js as part of my pre-internship assessment. Manage your daily tasks effectively with features like add, edit, delete, filter, and dark mode support.  
 
----
+----
 
 ## 🚀 Features
 ✅ Simple login with username (saved in localStorage)  
